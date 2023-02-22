@@ -1,3 +1,4 @@
+//Created by Cameron and Don Murphy
 #include<iostream>
 using namespace std;
 
@@ -114,7 +115,7 @@ int main()
 		cout << "The party starts climbing the rocky mountians." << endl;
 		cout << "Normally a character would have a hard time climbing with an armortype : " << Warrior.armorType << endl;
 		cout << "However " << Warrior.charName << " the " << Warrior.className << " has " << Warrior.STR << " Strength." << endl;
-		cout << "This makes climbing a breeze for" << Warrior.charName << "." << endl;
+		cout << "This makes climbing a breeze for " << Warrior.charName << "." << endl;
 		break;
 
 		case cave:
