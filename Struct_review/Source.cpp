@@ -36,8 +36,8 @@ void PrintPartySheet(party member)
 	     << "DEX:" << member.DEX << setw(5) 
 		 << "STR:" << member.STR << setw(5)
 		 << "INT:" << member.INT << endl;
-	printLines();
-	if(member.weak_magical)
+	printLines(); 
+	if(member.weak_magical) //BUG: prints the mage is weak to magic.
 	{
 		cout << "WEAKNESS: MAGIC" << endl; 
 	}
@@ -101,7 +101,7 @@ int main()
 	Rogue.HP = 150;
 	Rogue.MP = 20;
 	Rogue.DEX = 10;
-	Rogue.STR = 5;
+	Rogue.STR = 5;<< setw(5)
 	Rogue.INT = 2;
 
 	//Party member Warrior
@@ -144,6 +144,8 @@ int main()
 		cout << "Normally a character would have a hard time climbing with an armortype : " << Warrior.armorType << endl;
 		cout << "However " << Warrior.charName << " the " << Warrior.className << " has " << Warrior.STR << " Strength." << endl;
 		cout << "This makes climbing a breeze for " << Warrior.charName << "." << endl;
+
+
 		break;
 
 		case cave:
