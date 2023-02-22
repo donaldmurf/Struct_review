@@ -1,5 +1,6 @@
 //Created by Cameron and Don Murphy
-#include<iostream>
+#include<iostream> //input output stream AKA cout cin
+#include<iomanip> //used for setw() for formatting output
 using namespace std;
 
 struct party //Party Members 
@@ -19,8 +20,34 @@ struct monsters //monsters for the party members to fight
 	enum weakness { weak_physical = 1, weak_magical = 2 };
 	
 } bat, ogre, witch;
-
-
+void printLines()
+{
+	cout << "----------" << endl;
+}
+void PrintPartySheet(party member)
+{
+	cout <<"NAME: " << member.charName << endl;
+	printLines();
+	cout << "CLASS: " << member.className << endl;
+	printLines();
+	cout << "HP:" << member.HP << setw(5)
+	     << "MP:" << member.MP << setw(5) 
+		 << "\n"
+	     << "DEX:" << member.DEX << setw(5) 
+		 << "STR:" << member.STR << setw(5)
+		 << "INT:" << member.INT << endl;
+	printLines();
+	if(member.weak_magical)
+	{
+		cout << "WEAKNESS: MAGIC" << endl; 
+	}
+	else if (member.weak_physical)
+	{
+		cout << "WEAKNESS: PHYSICAL" << endl; 
+	}
+	printLines();
+	
+}
 //TODO
 /*make a struct for bosses
 -make a function to print status
@@ -102,6 +129,7 @@ int main()
 	//finish giving values to all structs
 
 	//write some text as a senario where the party attacks some monsters vise versa
+	PrintPartySheet(Warrior);
 
 	cout << "The party enters the : (1)Mountians, (2)Cave, (3)Woods: ";
 		enum area { mountian = 1, cave = 2, woods = 3 };
